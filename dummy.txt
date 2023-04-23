@@ -1,0 +1,4 @@
+ data.append("file", image)
+    data.append("upload_preset", "insta-clone")
+    data.append("cloud_name", "instagram1-clone")
+    fetch("https://api.cloudinary.com/v1_1/instagram1-clone/image/upload",
