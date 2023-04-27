@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   const likePost = (id) => {
-    fetch("http://localhost:5000/like", {
+    fetch("https://instagram1-clone.onrender.com/like", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
