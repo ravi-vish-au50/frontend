@@ -22,7 +22,7 @@ export default function MyFolliwngPost() {
     }
 
     // Fetching all posts
-    fetch("http://localhost:5000/myfollwingpost", {
+    fetch("https://instagram1-clone.onrender.com/myfollwingpost", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
