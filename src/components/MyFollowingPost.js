@@ -12,7 +12,7 @@ export default function MyFolliwngPost() {
   const [item, setItem] = useState([]);
 
   // Toast functions
-  // const notifyA = (msg) => toast.error(msg);
+  const notifyA = (msg) => toast.error(msg);
   const notifyB = (msg) => toast.success(msg);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function MyFolliwngPost() {
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         setData(result);
       })
       .catch((err) => console.log(err));
@@ -59,7 +59,7 @@ export default function MyFolliwngPost() {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((posts) => {
-          if (posts._id === result._id) {
+          if (posts._id == result._id) {
             return result;
           } else {
             return posts;
@@ -83,7 +83,7 @@ export default function MyFolliwngPost() {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((posts) => {
-          if (posts._id === result._id) {
+          if (posts._id == result._id) {
             return result;
           } else {
             return posts;
@@ -110,7 +110,7 @@ export default function MyFolliwngPost() {
       .then((res) => res.json())
       .then((result) => {
         const newData = data.map((posts) => {
-          if (posts._id === result._id) {
+          if (posts._id == result._id) {
             return result;
           } else {
             return posts;
