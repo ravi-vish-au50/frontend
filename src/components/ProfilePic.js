@@ -10,8 +10,8 @@ export default function ProfilePic({ changeprofile }) {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "insta-clone");
-    data.append("cloud_name", "cantacloud2");
-    fetch("https://api.cloudinary.com/v1_1/cantacloud2/image/upload", {
+    data.append("cloud_name", "instagram1-clone");
+    fetch("https://api.cloudinary.com/v1_1/instagram1-clone/image/upload", {
       method: "post",
       body: data,
     })
@@ -23,7 +23,7 @@ export default function ProfilePic({ changeprofile }) {
 
   const postPic = () => {
     // saving post to mongodb
-    fetch("https://instagram1-clone.onrender.com/uploadProfilePic", {
+    fetch("http://localhost:5000/uploadProfilePic", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,14 @@ export default function ProfilePic({ changeprofile }) {
           />
         </div>
         <div style={{ borderTop: "1px solid #00000030" }}>
-          <button className="upload-btn" style={{ color: "#ED4956" }}>
+          <button
+            className="upload-btn"
+            onClick={() => {
+              setUrl(null);
+              postPic();
+            }}
+            style={{ color: "#ED4956" }}
+          >
             {" "}
             Remove Current Photo
           </button>

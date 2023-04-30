@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "./SignIn.css";
+import "../css/SignIn.css";
 import logo from "../img/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -24,7 +24,7 @@ export default function SignIn() {
       return
     }
     // Sending data to server
-    fetch("https://instagram1-clone.onrender.com/signin", {
+    fetch("http://localhost:5000/signin", {
       method: "post",
       headers: {
         "Content-Type": "application/json"

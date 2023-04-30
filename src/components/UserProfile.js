@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PostDetail from "./PostDetail";
-import "./Profile.css";
+import "../css/Profile.css";
 import { useParams } from "react-router-dom";
 
 export default function UserProfie() {
@@ -12,7 +12,7 @@ export default function UserProfie() {
 
   // to follow user
   const followUser = (userId) => {
-    fetch("https://instagram1-clone.onrender.com/follow", {
+    fetch("http://localhost:5000/follow", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function UserProfie() {
 
   // to unfollow user
   const unfollowUser = (userId) => {
-    fetch("https://instagram1-clone.onrender.com/unfollow", {
+    fetch("http://localhost:5000/unfollow", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export default function UserProfie() {
   };
 
   useEffect(() => {
-    fetch(`https://instagram1-clone.onrender.com/user/${userid}`, {
+    fetch(`http://localhost:5000/user/${userid}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },

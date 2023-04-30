@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../img/logo.png";
-import "./SignUp.css";
+import "../css/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 
 import { toast } from 'react-toastify';
@@ -31,7 +31,7 @@ export default function SignUp() {
     }
 
     // Sending data to server
-    fetch("https://instagram1-clone.onrender.com/signup", {
+    fetch("http://localhost:5000/signup", {
       method: "post",
       headers: {
         "Content-Type": "application/json"
